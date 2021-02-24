@@ -1,0 +1,38 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes moveInAngle {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    color: #d44d4d;
+  }
+  100% {
+    color: #8f8f57;
+    color: yellow;
+    color: #e0e003;
+  }
+}
