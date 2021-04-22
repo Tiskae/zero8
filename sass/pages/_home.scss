@@ -1,3 +1,5 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+// Navigation section 🧭🧭🧭🧭🧭🧭🧭🧭🧭🧭🧭🧭🧭
 .nav {
   background-color: black;
   border-bottom: 2px solid #d44d4d;
@@ -7,14 +9,19 @@
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: min-content 1fr max-content;
-  animation: moveInTop 1s 2s;
-  animation-fill-mode: backwards;
   z-index: 100;
   align-items: center;
+
+  &.animated {
+    animation: moveInTop 1s 2s;
+    animation-fill-mode: backwards;
+  }
 
   &.sticky {
     position: fixed;
     width: 100vw;
+    animation: opaced 1.5s;
+    animation-fill-mode: forwards;
 
     a {
       display: block;
@@ -139,6 +146,8 @@
   }
 }
 
+/////////////////////////////////////////////////////////////////////////
+// Header section 🔝🔝🔝🔝🔝🔝🔝🔝🔝🔝🔝🔝🔝
 .header {
   background-color: black;
   padding: 6rem;
@@ -184,9 +193,7 @@
       }
 
       span {
-        // display: inline-block;
         background-color: #d44d4d;
-        // padding: .5rem;
         font-style: italic;
         transform: skewX(-10deg);
         color: #e0e003;
@@ -214,6 +221,8 @@
   }
 }
 
+/////////////////////////////////////////////////////////////////
+// Feateures section
 #section-features {
   background-color: black;
   display: grid;
@@ -342,10 +351,6 @@ h2 {
       }
     }
 
-    // @media only screen and (max-width: 25em) {
-    //    width: 100%;
-    // }
-
     h3 {
       color: #d44d4d;
     }
@@ -467,6 +472,8 @@ h2 {
   }
 }
 
+/////////////////////////////////////////////////////////////////////////////////
+// Gallery section
 .section-gallery {
   padding: 3rem;
   padding-bottom: 8rem;
@@ -504,16 +511,19 @@ h2 {
     width: 9rem;
     background-color: black;
     position: absolute;
-    top: 1.5rem;
-    left: 1rem;
+    bottom: 4rem;
+    left: -1rem;
     border-radius: 2.5rem;
     margin: 0 auto;
+    transform: rotateZ(90deg);
 
     @media only screen and (max-width: 48em) {
+      left: 1rem;
       height: 2.4rem;
       width: 6rem;
       border-radius: 1.5rem;
       top: 1rem;
+      transform: rotate(0);
     }
 
     &::before,
@@ -558,6 +568,8 @@ h2 {
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////////
+// Footer section
 .footer {
   padding: 4rem;
   background-color: black;

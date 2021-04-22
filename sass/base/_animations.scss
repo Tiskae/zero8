@@ -36,3 +36,15 @@
     color: #e0e003;
   }
 }
+
+@keyframes opaced {
+  0% {
+    opacity: 0;
+    top: -100%;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}

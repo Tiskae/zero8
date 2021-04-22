@@ -7,16 +7,23 @@ const navMenuBtn = document.querySelector(".nav__menu--btn");
 const navMenu = document.querySelector(".nav__menu");
 const gallerySection = document.querySelector(".section-gallery");
 
+//////////////////////////////////////////////////////////////////////
+// Nav toggle button handler
 navMenuBtn.addEventListener("click", function () {
   this.classList.toggle("open");
   navMenu.classList.toggle("hidden");
 });
 
+////////////////////////////////////////////////////////////////
+// Sticky navigation
 const stickyNav = function (entry) {
   const ent = entry[0];
   if (!ent.isIntersecting) {
     nav.classList.add("sticky");
-  } else nav.classList.remove("sticky");
+    nav.classList.contains("animated") && nav.classList.remove("animated");
+  } else {
+    nav.classList.remove("sticky");
+  }
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, {
@@ -27,6 +34,8 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 headerObserver.observe(header);
 
+///////////////////////////////////////////////////////////
+// Navigation link smooth scrolling
 [navLinksContainer, navMenu].forEach((el) => {
   el.addEventListener("click", function (e) {
     if (!e.target.classList.contains("nav__link")) return; // guard class
@@ -43,6 +52,8 @@ headerObserver.observe(header);
   });
 });
 
+//////////////////////////////////////////////////////////////////////////////////////
+// Lazy loading and animated sections
 const animateFeature = function (entry) {
   const ent = entry[0];
   if (ent.isIntersecting) {
@@ -61,6 +72,8 @@ const featureObserver = new IntersectionObserver(animateFeature, {
   featureObserver.observe(e);
 });
 
+//////////////////////////////////////////////////////////////////
+// Gallery carousel
 const imgs = document.querySelectorAll(".gallery__img");
 let counter = 0;
 
@@ -84,8 +97,6 @@ function moveSlides() {
 moveSlides();
 setInterval(moveSlides, 3000);
 
-///////////////////////////////////////////////////////
-
 gallerySection.classList.add("hidden");
 
 const animateGallerySection = function (entry) {
@@ -103,8 +114,8 @@ const gallerySectionObserver = new IntersectionObserver(animateGallerySection, {
 
 gallerySectionObserver.observe(gallerySection);
 
-///////////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////////////////
+// Footer lazy loading and animation
 footer.classList.add("hidden");
 
 const animateFooter = function (entry) {
