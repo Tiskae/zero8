@@ -156,7 +156,8 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   grid-gap: 6rem;
-  height: calc(100vh -5.5rem);
+  // height: calc(100vh -5.5rem);
+  height: 100vh;
   overflow: hidden;
 
   @media only screen and (max-width: 52em) {
